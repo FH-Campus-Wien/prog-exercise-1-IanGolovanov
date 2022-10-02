@@ -150,13 +150,13 @@ public class App {
 
         System.out.print("Number: ");
         int before = scanner.nextInt();
-        int after = 0;
 
-        while (before != 0 && before < 1000) {
-            int ldigit = before % 10; // getting the last digit
-            after = after * 10 + ldigit;
-            before /= 10;
-        }
+        int a = before / 100; //getting the first digit
+        int b = (before - a * 100) / 10; //getting the second digit
+        int c = before - a * 100 - b * 10; // getting the last digit
+
+        int after = c * 100 + b * 10 + a; // building the reversed number
+
         System.out.print(after + System.lineSeparator());
     }
 
