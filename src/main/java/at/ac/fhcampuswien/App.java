@@ -49,55 +49,115 @@ public class App {
     }
 
     //todo Task 5
-    public void swapTwoNumbers(){
+    public void swapTwoNumbers() {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
         int y = scanner.nextInt();
 
-        System.out.println("Before Swap:" + System.lineSeparator() + "x: " + x + System.lineSeparator() + "y: "+ y);
+        System.out.println("Before Swap:");
+        System.out.print("x: ");
+        System.out.print("y: ");
 
         x = x + y;
         y = x - y;
         x = x - y;
 
-        System.out.println("After Swap:" + System.lineSeparator() + "x: " + x + System.lineSeparator() + "y: "+ y);
+        System.out.println("After Swap:" + System.lineSeparator() + "x: " + x + System.lineSeparator() + "y: " + y);
     }
 
     //todo Task 6
     public void compareTwoNumbers(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("n1: ");
+        System.out.print("n1: ");
         int n1 = scanner.nextInt();
-        System.out.println("n2: ");
+        System.out.print("n2: ");
         int n2 = scanner.nextInt();
 
         if (n1 > n2) {
-            System.out.println("n1 > n2");
+            System.out.print("n1 > n2" + System.lineSeparator());
         } else if (n2 > n1) {
-            System.out.println("n2 > n1");
+            System.out.print("n2 > n1" + System.lineSeparator());
         } else if (n1 == n2) {
-            System.out.println("n1 == n2");
+            System.out.print("n1 == n2" + System.lineSeparator());
         }
     }
 
     //todo Task 7
     public void ratingSalesPerson(){
-        // input your solution here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter annual Revenue: ");
+        int s = scanner.nextInt();
+
+        if (s < 0 || s >= 100000) {
+            System.out.print("Invalid Revenue" + System.lineSeparator());
+        } else if (s >= 0 && s < 20000 ) {
+            System.out.print("Poor Sales Revenue" + System.lineSeparator());
+        } else if (s >= 20000 && s < 50000) {
+            System.out.print("Average Sales Revenue" + System.lineSeparator());
+        } else if (s >= 50000 && s < 80000) {
+            System.out.print("Good Sales Revenue" + System.lineSeparator());
+        } else if (s >= 80000 && s < 100000) {
+            System.out.print("Excellent Sales Revenue" + System.lineSeparator());
+        }
     }
 
     //todo Task 8
     public void getCommissionRate(){
-        // input your solution here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter CommissionClass: ");
+        int a = scanner.nextInt();
+
+        switch (a) {
+            case 1:
+                System.out.print("Your Commission Rate was set to 0.01" + System.lineSeparator());
+                break;
+            case 2:
+                System.out.print("Your Commission Rate was set to 0.02" + System.lineSeparator());
+                break;
+            case 3:
+                System.out.print("Your Commission Rate was set to 0.03" + System.lineSeparator());
+                break;
+            case 4:
+                System.out.print("Your Commission Rate was set to 0.04" + System.lineSeparator());
+                break;
+            default:
+                System.out.print("Your Commission Rate was set to 0.0" + System.lineSeparator());
+                break;
+        }
     }
 
     //todo Task 9
     public void leapyear(){
-        // input your solution here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Year: ");
+        int y = scanner.nextInt();
+
+        if ((y%100) == 0 && (y%400) != 0) {
+            System.out.print("Not a Leapyear" + System.lineSeparator());
+        } else if ((y%4) == 0 || (y%400) == 0 ) {
+            System.out.print("Leapyear" + System.lineSeparator());
+        } else {
+            System.out.print("Not a Leapyear" + System.lineSeparator());
+        }
     }
 
     //todo Task 10
     public void transposedNumbers(){
-        // input your solution here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Number: ");
+        int before = scanner.nextInt();
+        int after = 0;
+
+        while (before != 0 && before < 1000) {
+            int ldigit = before % 10; // getting the last digit
+            after = after * 10 + ldigit;
+            before /= 10;
+        }
+        System.out.print(after + System.lineSeparator());
     }
 
 
