@@ -151,11 +151,11 @@ public class App {
         System.out.print("Number: ");
         int before = scanner.nextInt();
 
-        int a = before / 100; //getting the first digit
-        int b = (before - a * 100) / 10; //getting the second digit
-        int c = before - a * 100 - b * 10; // getting the last digit
+        int a = before / 100; // first digit
+        int b = before % 100 / 10; // digit in the middle
+        int c = before % 10; // last digit
 
-        int after = c * 100 + b * 10 + a; // building the reversed number
+        int after = c * 100 + b * 10 + a;
 
         System.out.print(after + System.lineSeparator());
     }
